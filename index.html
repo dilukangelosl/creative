@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Creative Test</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/pagePiling.js/dist/jquery.pagepiling.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,900" rel="stylesheet">
+
+    <style>
+        @-webkit-keyframes slide {
+            from {
+                background-position: 0px;
+            }
+            to {
+                background-position: -2000px;
+            }
+        }
+
+        @-webkit-keyframes slide1 {
+            from {
+                background-position: 0px 0px;
+            }
+            to {
+                background-position: -2000px -2000px;
+            }
+        }
+
+
+        #section1 {
+            background: #101113;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .heading {
+            font-family: 'Roboto', sans-serif;
+            width: 90%;
+            position: relative;
+            display: -webkit-box;
+        }
+
+        .aurthor {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-family: 'Roboto', sans-serif;
+            color: #969696;
+            font-size: 2em;
+        }
+
+        .letter {
+            color: white;
+            display: block;
+            font-size: 29.8vw;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent;
+            background-attachment: fixed;
+            background: url(http://artdealerboston.com/sitebuilder/images/Picasso_Art_Within_Art-437x321.jpg) repeat;
+            background-size: cover;
+            /* -webkit-animation: slide 80s linear infinite; */
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        }
+
+        .l2 {
+            padding-top: 10vw;
+
+            font-size: 19vw;
+
+            color: white;
+            display: block;
+
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-animation: slide 80s linear infinite;
+            text-shadow: 0px -1px 0px #4e4e4e, -6px 1px 1px #0f1213, 2px 1px 1px #0f1213, 2px 1px 1px #0f1213;
+            transition: 0.6s all ease-out;
+
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+        }
+
+        .l2:nth-child(2) {
+            background: url(https://www.reproduction-gallery.com/catalogue/uploads/1463472974_large-image_pablopicassowomanfacingtotheright1934lg.jpg) repeat;
+        }
+
+        .l2:nth-child(3) {
+            background: url(https://uploads8.wikiart.org/images/pablo-picasso/untitled-1937-8.jpg!PinterestSmall.jpg) repeat;
+        }
+
+        .l2:nth-child(4) {
+            background: url(https://i.pinimg.com/736x/74/69/fc/7469fc9b4df1458aa4d8ada6c864635c--picasso-cubism-pablo-picasso.jpg) repeat;
+        }
+
+        .l2:nth-child(5) {
+            background: url(http://www.abc.net.au/news/image/2666786-3x2-940x627.jpg) repeat;
+        }
+
+        .l2:nth-child(6) {
+            background: url(https://www.reproduction-gallery.com/catalogue/uploads/1463472974_large-image_pablopicassowomanfacingtotheright1934lg.jpg) repeat;
+        }
+
+        .l2:nth-child(7) {
+            background: url(https://uploads8.wikiart.org/images/pablo-picasso/untitled-1937-8.jpg!PinterestSmall.jpg) repeat;
+        }
+
+        .l2:nth-child(8) {
+            background: url(https://i.pinimg.com/736x/74/69/fc/7469fc9b4df1458aa4d8ada6c864635c--picasso-cubism-pablo-picasso.jpg) repeat;
+        }
+
+        .l2:nth-child(9) {
+            background: url(http://www.abc.net.au/news/image/2666786-3x2-940x627.jpg) repeat;
+        }
+
+        .l2:hover {
+
+            text-shadow: none !important;
+        }
+
+        .z1 {
+            padding-top: 10vw;
+            color: #0f1213;
+            font-size: 19vw;
+            z-index: -99999999;
+            display: block;
+            position: absolute;
+            text-shadow: 5px 1px 1px #040404;
+        }
+
+
+        .text {
+            font-size: 7px;
+            color: white;
+            display: block;
+            /* font-size: 29.8vw; */
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent;
+            background-attachment: fixed;
+            background: url(http://artdealerboston.com/sitebuilder/images/Picasso_Art_Within_Art-437x321.jpg) repeat;
+            background-size: cover;
+            -webkit-animation: slide 80s linear infinite;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .line {
+
+            width: 550px;
+            height: 5px;
+            background: url('https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/04/colortheory.jpg') no-repeat;
+            background-size: cover;
+            background-repeat: repeat;
+            -webkit-animation: slide 50s linear infinite;
+            position: absolute;
+            top: 58%;
+            right: 0;
+            display: block;
+            z-index: -999999;
+
+        }
+
+        .quote {
+
+
+            font-size: 2vh;
+            color: #c3c3c3;
+            text-align: left;
+            padding: 15px;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        #highlight {
+            height: 500px;
+            width: 450px;
+            background: red;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            background: url(bg.png);
+            background-size: cover;
+            background-position: center
+        }
+
+        .main {
+            background: url(http://artdealerboston.com/sitebuilder/images/Picasso_Art_Within_Art-437x321.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-repeat-x:repear; 
+            -webkit-animation: slide 80s linear infinite;
+
+        }
+
+        #loader-wrapper{
+            background: #0f1315;
+    color: #c3c3c3;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 20%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    z-index: 99999;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+        <div id="loader-wrapper">
+               
+            <h2>Please wait</h2>
+             
+            </div>
+    <div id="pagepiling">
+        <div class="section" id="section1">
+
+            <div class="main">
+                <div class="overlay">
+                    <div class="heading ">
+
+                        <span class="letter" id="letter">C</span>
+                        <span class="l2">R</span>
+                        <span class="l2">E</span>
+                        <span class="l2">A</span>
+                        <span class="l2">T</span>
+                        <span class="l2">I</span>
+                        <span class="l2">V</span>
+                        <span class="l2">E</span>
+                        <!-- <span class="line"></span> -->
+                    </div>
+                    <div class="quote">
+                        <span class="quotetext">
+
+                        </span>
+                        <span class="aurthor"></span>
+                    </div>
+
+                    <audio id="audio" autoplay>
+                           
+                            <source src="audio.mp3" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                          </audio>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="section">Some section</div>
+        <div class="section">Some section</div>
+        <div class="section">Some section</div>
+    </div>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/pagePiling.js/dist/jquery.pagepiling.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+   
+
+
+    <script src="bower_components/typed.js/lib/typed.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+           setTimeout(function(){
+            $("#loader-wrapper").fadeOut();
+           },3000);
+            $('#pagepiling').pagepiling({
+                menu: null,
+                direction: 'vertical',
+                verticalCentered: true,
+                sectionsColor: [],
+                anchors: [],
+                scrollingSpeed: 700,
+                easing: 'swing',
+                loopBottom: false,
+                loopTop: false,
+                css3: true,
+                navigation: {
+                    'textColor': '#ecf0f1',
+                    'bulletsColor': '#e74c3c',
+                    'position': 'right',
+                    'tooltips': ['section1', 'section2', 'section3', 'section4']
+                },
+                normalScrollElements: null,
+                normalScrollElementTouchThreshold: 5,
+                touchSensitivity: 5,
+                keyboardScrolling: true,
+                sectionSelector: '.section',
+                animateAnchor: false,
+
+                //events
+                onLeave: function (index, nextIndex, direction) { },
+                afterLoad: function (anchorLink, index) { },
+                afterRender: function () { },
+            });
+
+
+            var x = document.getElementById("audio"); 
+
+function playAudio() { 
+    x.play(); 
+} 
+
+function pauseAudio() { 
+    x.pause(); 
+}
+           
+playAudio();
+
+            var speed = 60;
+            var letter = document.getElementById("letter");
+            var tl = new TimelineMax({ repeat: -1 });
+            tl.to(letter, speed, { backgroundPosition: "2500px 3000px", ease: Linear.easeNone });
+
+            $('#section1').mousemove(function (res) {
+
+
+
+                speed = 20;
+                tl.duration(speed)
+                setTimeout(function (r) {
+                    speed = 60;
+                    tl.duration(speed)
+                }, 1000)
+
+            })
+
+
+
+            $('.l2').hover(function () {
+                var bg = $(this).css('background-image');
+                bg = bg.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+
+                $('.main').css({ "background": "url(" + bg + ")", "background-size": "cover", "background-repeat-x":"repeat" });
+            })
+
+
+
+
+            var quotes = [
+                {
+                    title: "Milton Glaser",
+                    content: "There are three responses to a piece of design – yes, no, and WOW! Wow is the one to aim for."
+                },
+                {
+                    title: "Paul Rand",
+                    content: "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring."
+                },
+                {
+                    title: "Stefan Sagmeister",
+                    content: "You can have an art experience in front of a Rembrandt… or in front of a piece of graphic design."
+                },
+                {
+                    title: "David Carson",
+                    content: "Graphic design will save the world right after rock and roll does."
+                },
+                {
+                    title: "Bob Gill",
+                    content: "I’ve never had a problem with a dumb client. There is no such thing as a bad client. Part of our job is to do good work and get the client to accept it."
+                }
+            ];
+            var randomindex = Math.floor(Math.random() * quotes.length);
+            var typed = new Typed('.quotetext', {
+                strings: ["", quotes[randomindex].content],
+                typeSpeed: 40
+            });
+            $('.aurthor').append(quotes[randomindex].title);
+
+
+        });
+    </script>
+
+</body>
+
+</html>
