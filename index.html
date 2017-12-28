@@ -303,9 +303,7 @@
     <script>
         $(document).ready(function () {
 
-           setTimeout(function(){
-            $("#loader-wrapper").fadeOut();
-           },3000);
+          
             $('#pagepiling').pagepiling({
                 menu: null,
                 direction: 'vertical',
@@ -348,6 +346,9 @@ function pauseAudio() {
 }
            
 playAudio();
+
+
+
 
             var speed = 60;
             var letter = document.getElementById("letter");
@@ -402,11 +403,16 @@ playAudio();
                 }
             ];
             var randomindex = Math.floor(Math.random() * quotes.length);
+            setTimeout(function(){
+            $("#loader-wrapper").fadeOut();
             var typed = new Typed('.quotetext', {
                 strings: ["", quotes[randomindex].content],
                 typeSpeed: 40
             });
             $('.aurthor').append(quotes[randomindex].title);
+            
+           },3000);
+            
 
 
         });
