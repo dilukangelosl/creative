@@ -39,6 +39,16 @@
     font-size: 2em;
 }
 
+.maurthor {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #969696;
+    font-size: 2em;
+    opacity: 0;
+}
+
 .letter {
     color: white;
     display: block;
@@ -189,6 +199,22 @@
 
 }
 
+.mquote {
+
+    width:450px;
+    font-size: 2vh;
+    color: #dfdfdf;
+    text-align: left;
+    padding: 25px;
+    padding-top:40vh;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.mquotetext {
+    opacity: 0;
+}
+
 #highlight {
     height: 500px;
     width: 450px;
@@ -203,9 +229,13 @@
     width: 100%;
     background: url(bg.png);
     background-size: cover;
-    background-position: center
+    background-position: center;
+    -webkit-animation: slide 80s linear infinite;
 }
 
+.ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
 .main {
     background: url(http://artdealerboston.com/sitebuilder/images/Picasso_Art_Within_Art-437x321.jpg);
     background-size: cover;
@@ -214,6 +244,50 @@
     background-repeat-x:repear; 
     -webkit-animation: slide 80s linear infinite;
 
+}
+
+#clock {
+    display: -webkit-box;
+    color: #b7b7b7;
+    font-size: 2em;
+}
+
+.unit{
+    margin: 0;
+}
+
+.unit::after {
+    
+        content: ":";
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        margin-left: 5px;
+        color: #b7b7b7;
+        margin-right: 5px;
+}
+
+.noafter::after {
+    
+    content: "";
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    margin-left: 5px;
+    color: #b7b7b7;
+    margin-right: 5px;
+}
+
+.mytime{
+        width: auto;
+    /* background: wheat; */
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    margin-right: 20px;
+}
+
+#date {
+    color: #b7b7b7;
+    text-align: center;
 }
 
 #loader-wrapper{
@@ -277,7 +351,7 @@ font-size: 30px;
     background-color: #181818;
     position: absolute;
     top:50%;
-    left: 50%;
+    left: 0;
     transform: translate(-50% -50%);
     transition: all 0.3s;
 }
@@ -378,4 +452,19 @@ ul li:hover .line {
 
 #close:hover{
     cursor: pointer;
+}
+
+.menuOverlay {
+    height: 100vh;
+    width: 100vw;
+    /* display: none; */
+    
+   
+}
+
+.menuOverlay .mask {
+    height: 100%;
+    width: 100%;
+    padding-left: 300px;
+    background: rgba(0,0,0,0.8);
 }

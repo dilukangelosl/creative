@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="bower_components/pagePiling.js/dist/jquery.pagepiling.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
 </head>
 
@@ -47,7 +49,7 @@
                             Scroll down
                     </a>
 
-                    <audio id="audio" autoplay>
+                    <audio id="audio"  loop>
                            
                             <source src="audio.mp3" type="audio/mpeg">
                           Your browser does not support the audio element.
@@ -66,6 +68,27 @@
                 </div>
             </div>
 
+            <div class="menuOverlay" >
+              <div class="mask">
+                <div class="mquote" >
+                    <span class="mquotetext">
+
+                    </span>
+                    <span class="maurthor"></span>
+                </div>
+
+                <div class="mytime">
+                    <p id="date" class="ubuntu"></p>
+<div id="clock">
+  <p class="unit ubuntu" id="hours"></p>
+  <p class="unit ubuntu" id="minutes"></p>
+  <p class="unit ubuntu" id="seconds"></p>
+  <p class="unit ubuntu noafter" id="ampm"></p>
+</div>
+                </div>
+              </div>
+            </div>
+
             <div id="mainMenu">
                 <div id="logo">
                     <img src="http://www.johnstownaa.com/assets/img/logo/aa-logo-white.png" alt="" height="75" width="75">
@@ -82,6 +105,8 @@
                 <div id="close">
                         <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
+
+                
             </div>
 
 
@@ -97,153 +122,10 @@
 
 
     <script src="bower_components/typed.js/lib/typed.min.js"></script>
-    <script>
-        $(document).ready(function () {
-
-          
-            $('#pagepiling').pagepiling({
-                menu: null,
-                direction: 'vertical',
-                verticalCentered: true,
-                sectionsColor: [],
-                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
-                scrollingSpeed: 700,
-                easing: 'swing',
-                loopBottom: false,
-                loopTop: false,
-                css3: true,
-                navigation: false,
-                normalScrollElements: null,
-                normalScrollElementTouchThreshold: 5,
-                touchSensitivity: 5,
-                keyboardScrolling: false,
-                sectionSelector: '.section',
-                animateAnchor: true,
-
-                //events
-                onLeave: function (index, nextIndex, direction) {
-                   
-                 },
-                afterLoad: function (anchorLink, index) { 
-                   if(index ==1){
-                    playAudio();
-                   }else if(index == 2 ){
-                       pauseAudio();
-                   }
-                },
-                afterRender: function () { },
-            });
-
-
-            var x = document.getElementById("audio"); 
-            x.play();
-function playAudio() { 
-    $("#audio").animate({volume: 1}, 1500);
-  
-} 
-
-function pauseAudio() { 
-    $("#audio").animate({volume: 0}, 1500);
-   
-}
-           
-playAudio();
-
-
-
-
-
-
-            var speed = 60;
-            var letter = document.getElementById("letter");
-            var tl = new TimelineMax({ repeat: -1 });
-            tl.to(letter, speed, { backgroundPosition: "2500px 3000px", ease: Linear.easeNone });
-
-            $('#section1').mousemove(function (res) {
-
-
-
-                speed = 20;
-                tl.duration(speed)
-                setTimeout(function (r) {
-                    speed = 60;
-                    tl.duration(speed)
-                }, 1000)
-
-            })
-
-
-
-            $('.l2').hover(function () {
-                var bg = $(this).css('background-image');
-                bg = bg.replace('url(', '').replace(')', '').replace(/\"/gi, "");
-
-                $('.main').css({ "background": "url(" + bg + ")", "background-size": "cover", "background-repeat-x":"repeat" });
-            })
-
-
-
-
-            var quotes = [
-                {
-                    title: "Milton Glaser",
-                    content: "There are three responses to a piece of design – yes, no, and WOW! Wow is the one to aim for."
-                },
-                {
-                    title: "Paul Rand",
-                    content: "The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring."
-                },
-                {
-                    title: "Stefan Sagmeister",
-                    content: "You can have an art experience in front of a Rembrandt… or in front of a piece of graphic design."
-                },
-                {
-                    title: "David Carson",
-                    content: "Graphic design will save the world right after rock and roll does."
-                },
-                {
-                    title: "Bob Gill",
-                    content: "I’ve never had a problem with a dumb client. There is no such thing as a bad client. Part of our job is to do good work and get the client to accept it."
-                }
-            ];
-            var randomindex = Math.floor(Math.random() * quotes.length);
-            setTimeout(function(){
-            $("#loader-wrapper").fadeOut();
-            var typed = new Typed('.quotetext', {
-                strings: ["", quotes[randomindex].content],
-                typeSpeed: 40
-            });
-            $('.aurthor').append(quotes[randomindex].title);
-            
-           },200);
-            
-
-
-           $('#menuIcon').click(function(){
-               $('#mainMenu').css("left","0px");
-
-               function showMenu(){
-                $('#mainMenu').css("-webkit-clip-path","polygon(0 0,100% 0,100% 100%,0% 100%)");
-
-                $('#menuIcon').animate({right:'-100px'},300);
-               }
-               setTimeout(showMenu,100);
-           })
-
-           $('#close').click(function(){
-            $('#mainMenu').css("-webkit-clip-path","polygon(0 0,0% 0,100% 100%,0% 100%)");
-            function hideMenu(){
-                $('#mainMenu').css("left","-300px");
-
-                $('#menuIcon').animate({right:'50px'},300);
-               }
-               setTimeout(hideMenu,100);
-           })
-
-           
-
-        });
-    </script>
+    <script src="bower_components/vide/dist/jquery.vide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="clock.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
